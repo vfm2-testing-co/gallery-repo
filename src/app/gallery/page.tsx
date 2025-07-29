@@ -1,29 +1,9 @@
 import { Search, Filter, Grid, List } from "lucide-react";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
-import Link from "next/link";
 
 export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-      {/* Header */}
-      <header className="bg-white dark:bg-slate-800 border-b">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-xl font-bold text-slate-900 dark:text-white">
-              Portfolio Gallery
-            </Link>
-            <nav className="flex items-center gap-4">
-              <Link href="/upload" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
-                Upload
-              </Link>
-              <Link href="/admin" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-                Admin
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
       <div className="container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="mb-8">

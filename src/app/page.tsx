@@ -1,4 +1,4 @@
-import { Camera, Upload, Users, Eye } from "lucide-react";
+import { Upload, Users, Eye } from "lucide-react";
 import Link from "next/link";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { UploadZone } from "@/components/upload/UploadZone";
@@ -6,31 +6,6 @@ import { UploadZone } from "@/components/upload/UploadZone";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      {/* Header */}
-      <header className="border-b bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Camera className="h-8 w-8 text-blue-600" />
-              <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                Portfolio Gallery
-              </h1>
-            </div>
-            <nav className="hidden md:flex items-center gap-6">
-              <Link href="/gallery" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
-                Gallery
-              </Link>
-              <Link href="/upload" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
-                Upload
-              </Link>
-              <Link href="/admin" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                Admin
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
