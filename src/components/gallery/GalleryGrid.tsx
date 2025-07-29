@@ -11,13 +11,38 @@ interface GalleryGridProps {
   onLoadMore?: () => void;
   hasMorePhotos?: boolean;
   isLoading?: boolean;
+  selectedTags?: string[];
+  searchQuery?: string;
 }
 
-export function GalleryGrid({ limit, className = "", onLoadMore, hasMorePhotos = false, isLoading = false }: GalleryGridProps) {
+export function GalleryGrid({ 
+  limit, 
+  className = "", 
+  onLoadMore, 
+  hasMorePhotos = false, 
+  isLoading = false,
+  selectedTags = [],
+  searchQuery = ""
+}: GalleryGridProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const [likedPhotos, setLikedPhotos] = useState<Set<string>>(new Set());
 
-  const displayedPhotos = limit ? mockPhotos.slice(0, limit) : mockPhotos;
+  // Filter photos based on selected tags and search query
+  const filteredPhotos = mockPhotos.filter(photo => {
+    // Filter by tags
+    const matchesTags = selectedTags.length === 0 || 
+      selectedTags.some(tag => photo.tags.includes(tag.toLowerCase()));
+    
+    // Filter by search query
+    const matchesSearch = searchQuery === "" ||
+      photo.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      photo.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (photo.photographer && photo.photographer.toLowerCase().includes(searchQuery.toLowerCase()));
+    
+    return matchesTags && matchesSearch;
+  });
+
+  const displayedPhotos = limit ? filteredPhotos.slice(0, limit) : filteredPhotos;
 
   const toggleLike = (photoId: string) => {
     setLikedPhotos(prev => {
@@ -150,10 +175,13 @@ export function GalleryGrid({ limit, className = "", onLoadMore, hasMorePhotos =
             <Eye className="h-8 w-8 text-slate-400" />
           </div>
           <h3 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2">
-            No photos yet
+            {selectedTags.length > 0 || searchQuery ? 'No photos match your filters' : 'No photos yet'}
           </h3>
           <p className="text-slate-500 dark:text-slate-400">
-            Upload your first photos to get started
+            {selectedTags.length > 0 || searchQuery 
+              ? 'Try adjusting your search terms or selected tags' 
+              : 'Upload your first photos to get started'
+            }
           </p>
         </div>
       )}
