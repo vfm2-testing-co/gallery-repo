@@ -61,7 +61,7 @@ export default function Home() {
               View All →
             </Link>
           </div>
-          <GalleryGrid limit={6} />
+          <GalleryGrid limit={6} currentPage={1} />
         </div>
       </section>
     </div>

@@ -13,16 +13,18 @@ interface GalleryGridProps {
   isLoading?: boolean;
   selectedTags?: string[];
   searchQuery?: string;
+  currentPage?: number;
 }
 
 export function GalleryGrid({ 
-  limit, 
+  limit = 6, 
   className = "", 
   onLoadMore, 
   hasMorePhotos = false, 
   isLoading = false,
   selectedTags = [],
-  searchQuery = ""
+  searchQuery = "",
+  currentPage = 1
 }: GalleryGridProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const [likedPhotos, setLikedPhotos] = useState<Set<string>>(new Set());
@@ -42,7 +44,14 @@ export function GalleryGrid({
     return matchesTags && matchesSearch;
   });
 
-  const displayedPhotos = limit ? filteredPhotos.slice(0, limit) : filteredPhotos;
+  // Calculate pagination
+  const totalPhotos = filteredPhotos.length;
+  const photosPerPage = limit;
+  const totalPages = Math.ceil(totalPhotos / photosPerPage);
+  const startIndex = 0;
+  const endIndex = currentPage * photosPerPage;
+  const displayedPhotos = filteredPhotos.slice(startIndex, endIndex);
+  const hasMore = endIndex < totalPhotos;
 
   const toggleLike = (photoId: string) => {
     setLikedPhotos(prev => {
@@ -187,7 +196,7 @@ export function GalleryGrid({
       )}
 
       {/* Load More Button */}
-      {hasMorePhotos && onLoadMore && (
+      {hasMore && onLoadMore && (
         <div className="text-center mt-12">
           <button
             onClick={onLoadMore}
@@ -196,6 +205,9 @@ export function GalleryGrid({
           >
             {isLoading ? 'Loading...' : 'Load More Photos'}
           </button>
+          <div className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            Showing {displayedPhotos.length} of {totalPhotos} photos
+          </div>
         </div>
       )}
 
