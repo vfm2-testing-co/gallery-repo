@@ -1,7 +1,27 @@
+'use client';
+
+import { useState } from "react";
 import { Search, Filter, Grid, List } from "lucide-react";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 
+const PHOTOS_PER_PAGE = 6;
+const TOTAL_PHOTOS = 15; // This would come from your backend/database in a real app
+
 export default function GalleryPage() {
+  const [photosToShow, setPhotosToShow] = useState(PHOTOS_PER_PAGE);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleLoadMore = async () => {
+    setIsLoading(true);
+    
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    setPhotosToShow(prev => Math.min(prev + PHOTOS_PER_PAGE, TOTAL_PHOTOS));
+    setIsLoading(false);
+  };
+
+  const hasMorePhotos = photosToShow < TOTAL_PHOTOS;
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       <div className="container mx-auto px-4 py-8">
@@ -64,14 +84,12 @@ export default function GalleryPage() {
         </div>
 
         {/* Gallery Grid */}
-        <GalleryGrid />
-
-        {/* Load More */}
-        <div className="text-center mt-12">
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-            Load More Photos
-          </button>
-        </div>
+        <GalleryGrid 
+          limit={photosToShow}
+          onLoadMore={handleLoadMore}
+          hasMorePhotos={hasMorePhotos}
+          isLoading={isLoading}
+        />
       </div>
     </div>
   );

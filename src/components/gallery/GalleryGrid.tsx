@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { Heart, Download, Share2, Eye, Tag } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -20,9 +19,12 @@ interface Photo {
 interface GalleryGridProps {
   limit?: number;
   className?: string;
+  onLoadMore?: () => void;
+  hasMorePhotos?: boolean;
+  isLoading?: boolean;
 }
 
-// Mock data for demonstration
+// Mock data for demonstration - let's add more photos for pagination
 const mockPhotos: Photo[] = [
   {
     id: '1',
@@ -89,10 +91,43 @@ const mockPhotos: Photo[] = [
     views: 3421,
     photographer: 'Emma Davis',
     dateTaken: '2024-01-01'
+  },
+  {
+    id: '7',
+    url: '/placeholder-7.jpg',
+    title: 'Mountain Vista',
+    tags: ['landscape', 'mountain', 'adventure'],
+    likes: 189,
+    downloads: 78,
+    views: 1876,
+    photographer: 'David Chen',
+    dateTaken: '2023-12-28'
+  },
+  {
+    id: '8',
+    url: '/placeholder-8.jpg',
+    title: 'Urban Nightscape',
+    tags: ['night', 'city', 'lights'],
+    likes: 234,
+    downloads: 95,
+    views: 2543,
+    photographer: 'Lisa Martinez',
+    dateTaken: '2023-12-25'
+  },
+  {
+    id: '9',
+    url: '/placeholder-9.jpg',
+    title: 'Wildlife Portrait',
+    tags: ['wildlife', 'nature', 'animal'],
+    likes: 312,
+    downloads: 143,
+    views: 4321,
+    photographer: 'Tom Anderson',
+    dateTaken: '2023-12-20'
   }
 ];
 
-export function GalleryGrid({ limit, className = "" }: GalleryGridProps) {
+export function GalleryGrid({ limit, className = "", onLoadMore, hasMorePhotos = false, isLoading = false }: GalleryGridProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const [likedPhotos, setLikedPhotos] = useState<Set<string>>(new Set());
 
@@ -234,6 +269,19 @@ export function GalleryGrid({ limit, className = "" }: GalleryGridProps) {
           <p className="text-slate-500 dark:text-slate-400">
             Upload your first photos to get started
           </p>
+        </div>
+      )}
+
+      {/* Load More Button */}
+      {hasMorePhotos && onLoadMore && (
+        <div className="text-center mt-12">
+          <button
+            onClick={onLoadMore}
+            disabled={isLoading}
+            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isLoading ? 'Loading...' : 'Load More Photos'}
+          </button>
         </div>
       )}
 
