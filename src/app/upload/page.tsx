@@ -1,80 +1,52 @@
 import { Camera, Settings, Users, Globe } from "lucide-react";
 import { UploadZone } from "@/components/upload/UploadZone";
+import { SectionContainer, SectionTitle, FeatureCard, Hero } from "@/components/ui";
 
 export default function UploadPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* Page Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full mb-4">
-            <Camera className="h-8 w-8 text-blue-600" />
-          </div>
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            Upload Your Photos
-          </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Share your photography with automatic optimization, tagging, and organization. 
-            Perfect for building your portfolio or sharing with clients.
-          </p>
-        </div>
-
+      <Hero 
+        title="Upload Your Photos"
+        description="Share your photography with automatic optimization, tagging, and organization. Perfect for building your portfolio or sharing with clients."
+      />
+      
+      <SectionContainer className="pb-0">        
         {/* Upload Zone */}
         <div className="mb-12">
           <UploadZone />
         </div>
+      </SectionContainer>
 
+      <SectionContainer bgColor="bg-slate-100 dark:bg-slate-800/50">
+        <SectionTitle title="Upload Features" />
+        
         {/* Upload Options */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm">
-            <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
-              <Settings className="h-6 w-6 text-green-600" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Automatic Optimization</h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-4">
-              Your photos are automatically resized and optimized for web viewing while preserving quality.
-            </p>
-            <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-1">
-              <li>• Multiple size variants generated</li>
-              <li>• WebP format conversion</li>
-              <li>• EXIF data preservation</li>
-            </ul>
-          </div>
+          <FeatureCard 
+            icon={Settings}
+            title="Automatic Optimization"
+            description="Your photos are automatically resized and optimized for web viewing while preserving quality."
+            iconColor="text-green-600"
+          />
 
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm">
-            <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
-              <Users className="h-6 w-6 text-purple-600" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Client Sharing</h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-4">
-              Create private galleries for client review and approval with download controls.
-            </p>
-            <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-1">
-              <li>• Password-protected galleries</li>
-              <li>• Client approval workflow</li>
-              <li>• Download permissions</li>
-            </ul>
-          </div>
+          <FeatureCard 
+            icon={Users}
+            title="Client Sharing"
+            description="Create private galleries for client review and approval with download controls."
+            iconColor="text-purple-600"
+          />
 
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm">
-            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
-              <Globe className="h-6 w-6 text-blue-600" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Public Portfolio</h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-4">
-              Showcase your best work with customizable public galleries and SEO optimization.
-            </p>
-            <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-1">
-              <li>• Custom portfolio URLs</li>
-              <li>• SEO-friendly galleries</li>
-              <li>• Social media integration</li>
-            </ul>
-          </div>
+          <FeatureCard 
+            icon={Globe}
+            title="Public Portfolio"
+            description="Showcase your best work with customizable public galleries and SEO optimization."
+            iconColor="text-blue-600"
+          />
         </div>
 
         {/* Upload Settings */}
         <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm">
-          <h3 className="text-xl font-semibold mb-6">Upload Settings</h3>
+          <SectionTitle title="Upload Settings" className="!mb-6" />
           
           <div className="grid md:grid-cols-2 gap-8">
             {/* Gallery Assignment */}
@@ -139,7 +111,7 @@ export default function UploadPage() {
             </button>
           </div>
         </div>
-      </div>
+      </SectionContainer>
     </div>
   );
 }

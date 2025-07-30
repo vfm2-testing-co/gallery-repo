@@ -1,6 +1,6 @@
 import { Users, FolderOpen, BarChart3, Settings, Plus, Eye, Edit, Trash2 } from "lucide-react";
 import Link from "next/link";
-import { Hero, SectionContainer, SectionTitle } from "@/components/ui";
+import { Hero, SectionContainer, SectionTitle, FeatureCard } from "@/components/ui";
 
 export default function AdminPage() {
   const stats = [
@@ -57,14 +57,8 @@ export default function AdminPage() {
       />
       
       <SectionContainer>
-        <div className="flex justify-end mb-8">
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center gap-2">
-            <Plus className="h-5 w-5" />
-            New Gallery
-          </button>
-        </div>
-
         {/* Stats Grid */}
+        <SectionTitle title="Stats Overview" className="mb-6" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {stats.map((stat, index) => (
             <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm">
@@ -98,35 +92,28 @@ export default function AdminPage() {
         {/* Quick Actions */}
         <SectionTitle title="Quick Actions" />
         <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <Link href="/upload" className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-              <Plus className="h-6 w-6 text-blue-600" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Upload Photos</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm">
-              Add new photos to your galleries with automatic optimization
-            </p>
+          <Link href="/upload" className="block">
+            <FeatureCard 
+              icon={Plus}
+              title="Upload Photos"
+              description="Add new photos to your galleries with automatic optimization"
+              iconColor="text-blue-600"
+            />
           </Link>
 
-          <button className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow group text-left">
-            <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 dark:group-hover:bg-green-800 transition-colors">
-              <Users className="h-6 w-6 text-green-600" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Manage Clients</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm">
-              Add clients and manage access to private galleries
-            </p>
-          </button>
+          <FeatureCard 
+            icon={Users}
+            title="Manage Clients"
+            description="Add clients and manage access to private galleries"
+            iconColor="text-green-600"
+          />
 
-          <button className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow group text-left">
-            <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 dark:group-hover:bg-purple-800 transition-colors">
-              <Settings className="h-6 w-6 text-purple-600" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Settings</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm">
-              Configure your portfolio, branding, and preferences
-            </p>
-          </button>
+          <FeatureCard 
+            icon={Settings}
+            title="Settings"
+            description="Configure your portfolio, branding, and preferences"
+            iconColor="text-purple-600"
+          />
         </div>
 
         {/* Galleries Table */}
