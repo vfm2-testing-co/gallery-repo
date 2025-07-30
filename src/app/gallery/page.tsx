@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Search, Filter, Grid, List, ChevronDown, X } from "lucide-react";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
+import { Hero, SectionContainer, SectionTitle } from "@/components/ui";
 
 const PHOTOS_PER_PAGE = 6;
 
@@ -62,20 +63,15 @@ export default function GalleryPage() {
     setCurrentPage(1);
   };
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* Page Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
-            Photo Gallery
-          </h1>
-          <p className="text-slate-600 dark:text-slate-400">
-            Browse and discover amazing photography
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+      <Hero 
+        title="Photo Gallery"
+        description="Browse and discover amazing photography"
+      />
 
+      <SectionContainer className="mb-4">
         {/* Filters and Search */}
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-6 mb-8 shadow-sm">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
@@ -183,7 +179,10 @@ export default function GalleryPage() {
             </div>
           )}
         </div>
+      </SectionContainer>
 
+      <SectionContainer>
+        <SectionTitle title="Gallery" />
         {/* Gallery Grid */}
         <GalleryGrid 
           limit={PHOTOS_PER_PAGE}
@@ -193,7 +192,7 @@ export default function GalleryPage() {
           selectedTags={selectedTags}
           searchQuery={searchQuery}
         />
-      </div>
+      </SectionContainer>
     </div>
   );
 }

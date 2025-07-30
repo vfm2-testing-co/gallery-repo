@@ -3,13 +3,12 @@
 import { useState } from 'react';
 import { Heart, Download, Share2, Eye, Tag } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Photo, mockPhotos } from '@/lib/mock-data';
+import { Photo, mockPhotos } from '@/lib/mock-photo-data';
 
 interface GalleryGridProps {
   limit?: number;
   className?: string;
   onLoadMore?: () => void;
-  hasMorePhotos?: boolean;
   isLoading?: boolean;
   selectedTags?: string[];
   searchQuery?: string;
@@ -19,8 +18,7 @@ interface GalleryGridProps {
 export function GalleryGrid({ 
   limit = 6, 
   className = "", 
-  onLoadMore, 
-  hasMorePhotos = false, 
+  onLoadMore,
   isLoading = false,
   selectedTags = [],
   searchQuery = "",

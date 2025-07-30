@@ -1,5 +1,6 @@
 import { Users, FolderOpen, BarChart3, Settings, Plus, Eye, Edit, Trash2 } from "lucide-react";
 import Link from "next/link";
+import { Hero, SectionContainer, SectionTitle } from "@/components/ui";
 
 export default function AdminPage() {
   const stats = [
@@ -49,18 +50,14 @@ export default function AdminPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* Page Header */}
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
-              Admin Dashboard
-            </h1>
-            <p className="text-slate-600 dark:text-slate-400">
-              Manage your galleries, clients, and portfolio
-            </p>
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+      <Hero
+        title="Admin Dashboard"
+        description="Manage your galleries, clients, and portfolio"
+      />
+      
+      <SectionContainer>
+        <div className="flex justify-end mb-8">
           <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center gap-2">
             <Plus className="h-5 w-5" />
             New Gallery
@@ -99,6 +96,7 @@ export default function AdminPage() {
         </div>
 
         {/* Quick Actions */}
+        <SectionTitle title="Quick Actions" />
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           <Link href="/upload" className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow group">
             <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
@@ -132,16 +130,8 @@ export default function AdminPage() {
         </div>
 
         {/* Galleries Table */}
+        <SectionTitle title="Recent Galleries" viewAllLink="/admin/galleries" />
         <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden">
-          <div className="p-6 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-semibold">Recent Galleries</h2>
-              <button className="text-blue-600 hover:text-blue-700 font-medium">
-                View All
-              </button>
-            </div>
-          </div>
-
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead className="bg-slate-50 dark:bg-slate-700">
@@ -224,7 +214,7 @@ export default function AdminPage() {
             </table>
           </div>
         </div>
-      </div>
+      </SectionContainer>
     </div>
   );
 }
