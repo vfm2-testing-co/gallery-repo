@@ -1,34 +1,7 @@
-import { Upload, Users, Eye } from "lucide-react";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { UploadZone } from "@/components/upload/UploadZone";
-import { 
-  Hero, 
-  SectionContainer, 
-  SectionTitle, 
-  FeatureCard 
-} from "@/components/ui";
-
-// Define feature cards data
-const featureCardsData = [
-  {
-    icon: Upload,
-    title: "Smart Upload",
-    description: "Drag & drop with automatic resizing and optimization",
-    iconColor: "text-blue-600"
-  },
-  {
-    icon: Eye,
-    title: "Client Proofing",
-    description: "Share galleries with clients for review and approval",
-    iconColor: "text-green-600"
-  },
-  {
-    icon: Users,
-    title: "Public Sharing",
-    description: "Create public portfolios with custom URLs",
-    iconColor: "text-purple-600"
-  }
-];
+import { Hero, SectionContainer, SectionTitle, FeatureCard } from "@/components/ui";
+import { featureCardsData } from "@/lib/mock-feature-card-data";
 
 export default function Home() {
   return (

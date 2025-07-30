@@ -1,4 +1,4 @@
-import { Camera, Settings, Users, Globe } from "lucide-react";
+import { Settings, Users, Globe } from "lucide-react";
 import { UploadZone } from "@/components/upload/UploadZone";
 import { SectionContainer, SectionTitle, FeatureCard, Hero } from "@/components/ui";
 
