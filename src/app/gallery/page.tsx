@@ -4,11 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Search, Filter, Grid, List, ChevronDown, X } from "lucide-react";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { Hero, SectionContainer, SectionTitle } from "@/components/ui";
-
-const PHOTOS_PER_PAGE = 6;
-
-// Available tags for filtering
-const AVAILABLE_TAGS = ['landscape', 'portrait', 'architecture', 'nature', 'street', 'wedding', 'studio', 'professional', 'building', 'city', 'macro', 'wildlife', 'sports', 'abstract', 'beach'];
+import { AVAILABLE_TAGS } from "@/lib/mock-tag-data";
 
 export default function GalleryPage() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -63,7 +59,7 @@ export default function GalleryPage() {
     setCurrentPage(1);
   };
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="page-gradient">
       <Hero 
         title="Photo Gallery"
         description="Browse and discover amazing photography"
@@ -185,7 +181,7 @@ export default function GalleryPage() {
         <SectionTitle title="Gallery" />
         {/* Gallery Grid */}
         <GalleryGrid 
-          limit={PHOTOS_PER_PAGE}
+          limit={6}
           currentPage={currentPage}
           onLoadMore={handleLoadMore}
           isLoading={isLoading}

@@ -5,7 +5,7 @@ import { featureCardsData } from "@/lib/mock-feature-card-data";
 
 export default function Home() {
   return (
-    <div>
+    <div className="page-gradient">
       {/* Hero Section */}
       <Hero 
         title="Professional Photo Gallery & Portfolio" 

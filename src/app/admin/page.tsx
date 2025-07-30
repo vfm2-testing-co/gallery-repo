@@ -1,56 +1,11 @@
-import { Users, FolderOpen, BarChart3, Settings, Plus, Eye, Edit, Trash2 } from "lucide-react";
+import { Users, Plus, Eye, Edit, Trash2, Settings } from "lucide-react";
 import Link from "next/link";
 import { Hero, SectionContainer, SectionTitle, FeatureCard } from "@/components/ui";
+import { dashboardStats, recentGalleries } from "@/lib/mock-admin-data";
 
 export default function AdminPage() {
-  const stats = [
-    { label: "Total Photos", value: "1,234", icon: FolderOpen, color: "blue" },
-    { label: "Active Galleries", value: "28", icon: FolderOpen, color: "green" },
-    { label: "Client Projects", value: "12", icon: Users, color: "purple" },
-    { label: "This Month Views", value: "45,678", icon: BarChart3, color: "orange" },
-  ];
-
-  const galleries = [
-    {
-      id: 1,
-      name: "Wedding - Sarah & John",
-      type: "Client Review",
-      photos: 156,
-      views: 234,
-      status: "Active",
-      lastUpdated: "2 hours ago"
-    },
-    {
-      id: 2,
-      name: "Corporate Headshots",
-      type: "Public",
-      photos: 89,
-      views: 1234,
-      status: "Published",
-      lastUpdated: "1 day ago"
-    },
-    {
-      id: 3,
-      name: "Nature Portfolio",
-      type: "Portfolio",
-      photos: 234,
-      views: 5678,
-      status: "Published",
-      lastUpdated: "3 days ago"
-    },
-    {
-      id: 4,
-      name: "Street Photography",
-      type: "Draft",
-      photos: 67,
-      views: 0,
-      status: "Draft",
-      lastUpdated: "1 week ago"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="page-gradient">
       <Hero
         title="Admin Dashboard"
         description="Manage your galleries, clients, and portfolio"
@@ -60,7 +15,7 @@ export default function AdminPage() {
         {/* Stats Grid */}
         <SectionTitle title="Stats Overview" className="mb-6" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {stats.map((stat, index) => (
+          {dashboardStats.map((stat, index) => (
             <div key={index} className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm">
               <div className="flex items-center justify-between">
                 <div>
@@ -147,7 +102,7 @@ export default function AdminPage() {
                 </tr>
               </thead>
               <tbody>
-                {galleries.map((gallery) => (
+                {recentGalleries.map((gallery) => (
                   <tr key={gallery.id} className="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">
                     <td className="py-4 px-6">
                       <div className="font-medium text-slate-900 dark:text-white">

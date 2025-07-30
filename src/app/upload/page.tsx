@@ -4,7 +4,7 @@ import { SectionContainer, SectionTitle, FeatureCard, Hero } from "@/components/
 
 export default function UploadPage() {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
+    <div className="page-gradient">
       <Hero 
         title="Upload Your Photos"
         description="Share your photography with automatic optimization, tagging, and organization. Perfect for building your portfolio or sharing with clients."
