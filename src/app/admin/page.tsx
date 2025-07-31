@@ -45,7 +45,7 @@ export default function AdminPage() {
 
         {/* Galleries Table */}
         <SectionTitle title="Recent Galleries" viewAllLink="/admin/galleries" />
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden">
+        <div className="card-base overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead className="bg-slate-50 dark:bg-slate-700">
@@ -75,18 +75,18 @@ export default function AdminPage() {
               </thead>
               <tbody>
                 {recentGalleries.map((gallery) => (
-                  <tr key={gallery.id} className="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                  <tr key={gallery.id} className="table-row">
                     <td className="py-4 px-6">
                       <div className="font-medium text-slate-900 dark:text-white">
                         {gallery.name}
                       </div>
                     </td>
                     <td className="py-4 px-6">
-                      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                        gallery.type === 'Client Review' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300' :
-                        gallery.type === 'Public' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' :
-                        gallery.type === 'Portfolio' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300' :
-                        'bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300'
+                      <span className={`status-badge ${
+                        gallery.type === 'Client Review' ? 'status-private' :
+                        gallery.type === 'Public' ? 'status-active' :
+                        gallery.type === 'Portfolio' ? 'status-private' :
+                        'status-draft'
                       }`}>
                         {gallery.type}
                       </span>
@@ -98,10 +98,10 @@ export default function AdminPage() {
                       {gallery.views.toLocaleString()}
                     </td>
                     <td className="py-4 px-6">
-                      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                      <span className={`status-badge ${
                         gallery.status === 'Active' || gallery.status === 'Published' 
-                          ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
-                          : 'bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300'
+                          ? 'status-active'
+                          : 'status-draft'
                       }`}>
                         {gallery.status}
                       </span>
@@ -111,13 +111,13 @@ export default function AdminPage() {
                     </td>
                     <td className="py-4 px-6">
                       <div className="flex items-center gap-2">
-                        <button className="p-1 text-slate-400 hover:text-blue-600 transition-colors">
+                        <button className="btn-icon">
                           <Eye className="h-4 w-4" />
                         </button>
-                        <button className="p-1 text-slate-400 hover:text-green-600 transition-colors">
+                        <button className="btn-icon btn-icon-success">
                           <Edit className="h-4 w-4" />
                         </button>
-                        <button className="p-1 text-slate-400 hover:text-red-600 transition-colors">
+                        <button className="btn-icon btn-icon-danger">
                           <Trash2 className="h-4 w-4" />
                         </button>
                       </div>

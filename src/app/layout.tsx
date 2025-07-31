@@ -35,13 +35,13 @@ export default function RootLayout({
                 </h1>
               </Link>
               <nav className="flex items-center gap-6">
-                <Link href="/gallery" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors font-medium">
+                <Link href="/gallery" className="nav-link">
                   Gallery
                 </Link>
-                <Link href="/upload" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors font-medium">
+                <Link href="/upload" className="nav-link">
                   Upload
                 </Link>
-                <Link href="/admin" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                <Link href="/admin" className="btn-primary">
                   Admin
                 </Link>
               </nav>

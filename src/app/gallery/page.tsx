@@ -67,7 +67,7 @@ export default function GalleryPage() {
 
       <SectionContainer className="mb-4">
         {/* Filters and Search */}
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm">
+        <div className="card-base p-6">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
@@ -77,7 +77,7 @@ export default function GalleryPage() {
                 placeholder="Search photos..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="form-input pl-10"
               />
             </div>
 
@@ -86,7 +86,7 @@ export default function GalleryPage() {
               <div className="relative" ref={filterRef}>
                 <button 
                   onClick={() => setIsFilterOpen(!isFilterOpen)}
-                  className="flex items-center gap-2 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                  className="btn-secondary flex items-center gap-2"
                 >
                   <Filter className="h-4 w-4" />
                   Filters
@@ -100,14 +100,14 @@ export default function GalleryPage() {
                 
                 {/* Filter Dropdown */}
                 {isFilterOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg shadow-lg z-10">
+                  <div className="absolute top-full left-0 mt-2 w-80 card-base border border-slate-300 dark:border-slate-600 shadow-lg z-10">
                     <div className="p-4">
                       <div className="flex items-center justify-between mb-3">
                         <h3 className="font-medium text-slate-900 dark:text-white">Filter by Tags</h3>
                         {selectedTags.length > 0 && (
                           <button
                             onClick={clearAllTags}
-                            className="text-sm text-blue-500 hover:text-blue-600"
+                            className="nav-link-active text-sm"
                           >
                             Clear all
                           </button>
@@ -118,7 +118,7 @@ export default function GalleryPage() {
                         {AVAILABLE_TAGS.map(tag => (
                           <label
                             key={tag}
-                            className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 cursor-pointer"
+                            className="flex items-center gap-2 p-2 rounded-lg hover-bg cursor-pointer"
                           >
                             <input
                               type="checkbox"
@@ -160,7 +160,7 @@ export default function GalleryPage() {
                 {selectedTags.map(tag => (
                   <span
                     key={tag}
-                    className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm"
+                    className="status-badge status-active inline-flex items-center gap-1"
                   >
                     {tag}
                     <button

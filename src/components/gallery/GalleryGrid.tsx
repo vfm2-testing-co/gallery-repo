@@ -73,7 +73,7 @@ export function GalleryGrid({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="group relative card-elevated overflow-hidden"
           >
             {/* Photo Container */}
             <div className="relative aspect-[4/3] overflow-hidden">
@@ -94,7 +94,7 @@ export function GalleryGrid({
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <button
                     onClick={() => setSelectedPhoto(photo)}
-                    className="bg-white/90 dark:bg-slate-800/90 text-slate-900 dark:text-white px-4 py-2 rounded-lg font-medium hover:bg-white dark:hover:bg-slate-700 transition-colors"
+                    className="btn-secondary"
                   >
                     View Details
                   </button>

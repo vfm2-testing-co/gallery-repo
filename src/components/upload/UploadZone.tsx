@@ -85,10 +85,10 @@ export function UploadZone({ onUpload, maxFiles = 10, className = "" }: UploadZo
       <div
         {...getRootProps()}
         className={`
-          relative border-2 border-dashed rounded-xl p-12 text-center transition-all cursor-pointer transform hover:scale-[1.01] active:scale-[0.99]
+          drop-zone hover-lift
           ${isDragActive 
-            ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' 
-            : 'border-slate-300 dark:border-slate-600 hover:border-blue-400 dark:hover:border-blue-500'
+            ? 'drop-zone-active' 
+            : 'drop-zone-inactive'
           }
         `}
       >
@@ -122,13 +122,12 @@ export function UploadZone({ onUpload, maxFiles = 10, className = "" }: UploadZo
           >
             <h4 className="text-lg font-semibold">Uploading Files</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {uploadedFiles.map((fileObj) => (
-                <motion.div
+              {uploadedFiles.map((fileObj) => (                  <motion.div
                   key={fileObj.id}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
-                  className="relative bg-white dark:bg-slate-800 rounded-lg p-4 shadow-lg"
+                  className="relative card-base p-4"
                 >
                   <button
                     onClick={() => removeFile(fileObj.id)}
@@ -161,9 +160,9 @@ export function UploadZone({ onUpload, maxFiles = 10, className = "" }: UploadZo
                     </div>
                     
                     {fileObj.status === 'uploading' && (
-                      <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                      <div className="progress-bar">
                         <motion.div
-                          className="bg-blue-500 h-2 rounded-full"
+                          className="progress-fill"
                           initial={{ width: 0 }}
                           animate={{ width: `${fileObj.progress}%` }}
                           transition={{ duration: 0.2 }}

@@ -45,7 +45,7 @@ export default function UploadPage() {
         </div>
 
         {/* Upload Settings */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm">
+        <div className="card-base p-6">
           <SectionTitle title="Upload Settings" className="!mb-6" />
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -54,7 +54,7 @@ export default function UploadPage() {
               <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                 Assign to Gallery
               </label>
-              <select className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <select className="form-select">
                 <option>Select a gallery...</option>
                 <option>Wedding - Sarah & John</option>
                 <option>Corporate Headshots</option>
@@ -68,7 +68,7 @@ export default function UploadPage() {
               <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                 Visibility
               </label>
-              <select className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <select className="form-select">
                 <option>Public</option>
                 <option>Private</option>
                 <option>Client Review</option>
@@ -84,7 +84,7 @@ export default function UploadPage() {
               <input
                 type="text"
                 placeholder="wedding, portrait, outdoor, professional..."
-                className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="form-input"
               />
             </div>
 
@@ -96,17 +96,17 @@ export default function UploadPage() {
               <input
                 type="text"
                 placeholder="© 2024 Your Photography Studio"
-                className="w-full px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="form-input"
               />
             </div>
           </div>
 
           {/* Action Buttons */}
           <div className="flex gap-4 mt-8">
-            <button className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+            <button className="btn-primary flex-1 py-3">
               Upload & Process
             </button>
-            <button className="px-6 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+            <button className="btn-secondary px-6 py-3">
               Save as Draft
             </button>
           </div>
