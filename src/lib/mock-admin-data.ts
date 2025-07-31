@@ -1,10 +1,12 @@
 import { FolderOpen, Users, BarChart3 } from "lucide-react";
 
+type StatColor = 'blue' | 'green' | 'purple' | 'orange';
+
 export const dashboardStats = [
-    { label: "Total Photos", value: "1,234", icon: FolderOpen, color: "blue" },
-    { label: "Active Galleries", value: "28", icon: FolderOpen, color: "green" },
-    { label: "Client Projects", value: "12", icon: Users, color: "purple" },
-    { label: "This Month Views", value: "45,678", icon: BarChart3, color: "orange" },
+    { label: "Total Photos", value: "1,234", icon: FolderOpen, color: 'blue' as StatColor },
+    { label: "Active Galleries", value: "28", icon: FolderOpen, color: 'green' as StatColor },
+    { label: "Client Projects", value: "12", icon: Users, color: 'purple' as StatColor },
+    { label: "This Month Views", value: "45,678", icon: BarChart3, color: 'orange' as StatColor },
 ];
 
 export const recentGalleries = [
