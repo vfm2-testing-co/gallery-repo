@@ -13,14 +13,11 @@ By the end of this demo, you will:
 
 **Estimated Time:** 15-20 minutes
 
-
 # Features: Learn about the project
 
-Mode: Ask
-
-For this first demo, lets learn about the different features available in Ask mode. Specifically, chat participants, chat variables, and slash commands.
-
 ## 🎯 Step 1: Discover Available Features
+
+Mode: Ask
 
 **Goal:** Learn what GitHub Copilot can do for you in Ask mode.
 
