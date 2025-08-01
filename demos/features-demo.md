@@ -20,7 +20,7 @@ Mode: Ask
 
 For this first demo, lets learn about the different features available in Ask mode. Specifically, chat participants, chat variables, and slash commands.
 
-### 🎯 Step 1: Discover Available Features
+## 🎯 Step 1: Discover Available Features
 
 **Goal:** Learn what GitHub Copilot can do for you in Ask mode.
 
@@ -34,7 +34,7 @@ Prompt
 
 ---
 
-### 📚 Step 2: Learn About the Project
+## 📚 Step 2: Learn About the Project
 
 ### 2.1 Get Project Overview
 **Prompt:**
