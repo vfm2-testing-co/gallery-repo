@@ -74,16 +74,16 @@ Which answers did you like the best? which the least? Discuss in your group.
 **Generate mock data**
 Prompt
 ```
-
+/generate-mock-photo-data 3
 ```
 
-**Generate mock data**
+**Generate new UI component**
 Prompt
 ```
 
 ```
 
-**Generate mock data**
+**Generate new gallery feature**
 Prompt
 ```
 
