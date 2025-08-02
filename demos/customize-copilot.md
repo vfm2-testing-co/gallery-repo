@@ -80,7 +80,7 @@ Prompt
 **Generate new UI component**
 Prompt
 ```
-
+/generate-new-ui for the recent galleries table in the admin page. I want it to be the replacement component for the current table. Place it in the layout folder.
 ```
 
 **Generate new gallery feature**
