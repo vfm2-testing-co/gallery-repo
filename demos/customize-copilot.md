@@ -86,7 +86,7 @@ Prompt
 **Generate new gallery feature**
 Prompt
 ```
-
+/new-gallery-features add in the functionality for the "download" button in the gallery page. All components should be in the "components/gallery" folder
 ```
 
 ## 🎭 Step 4: Utilize Different Chat Modes
