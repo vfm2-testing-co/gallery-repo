@@ -57,13 +57,37 @@ Prompt
 // Ask each model: "Help me refactor this function for better performance, readability, and add TypeScript improvements"
 ```
 
-Repeat steps 2-5 for three models of your choosing. 
+Repeat steps 2-5 for two other models of your choosing.
 
 Which answers did you like the best? which the least? Discuss in your group. 
 
 ---
 
 ## 📝 Step 3: Use Prompt Files
+
+1. Go to the prompts folder and look through the files. 
+  - There are three files to choose from each in varying difficult levels. 
+  - Look over the format of each before choosing which one.
+2. Choose the file you want to test out
+3. Add in the prompt below depending on the prompt file.
+
+**Generate mock data**
+Prompt
+```
+
+```
+
+**Generate mock data**
+Prompt
+```
+
+```
+
+**Generate mock data**
+Prompt
+```
+
+```
 
 ## 🎭 Step 4: Utilize Different Chat Modes
 
