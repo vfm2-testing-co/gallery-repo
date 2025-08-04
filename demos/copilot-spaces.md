@@ -61,4 +61,4 @@ Mark off each item as you complete it:
 
 Congratulations! You've successfully created and used a GitHub Copilot Space for focused development work.
 
-👉 **[Start GitHub Copilot Coding Agent Demo](./coding-agent.md)
+👉 **[Start GitHub Copilot Coding Agent Demo](./coding-agent.md)**
