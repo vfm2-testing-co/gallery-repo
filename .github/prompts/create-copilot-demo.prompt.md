@@ -46,5 +46,5 @@ Mark off each item as you complete it:
 
 Congratulations! You've completed your first GitHub Copilot demo. 
 
-👉 **[Start DEMO NAME Demo ](./next-demo-name.md)**
+👉 **[Start DEMO NAME Demo](./next-demo-name.md)**
 ```
