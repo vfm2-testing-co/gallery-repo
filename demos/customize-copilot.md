@@ -123,7 +123,7 @@ Look through response. What other modes would be helpful for this repo?
 
 ### Understanding MCP Servers
 
-Model Context Protocol (MCP) servers allow you to extend GitHub Copilot capabilities. Custom instructions can help guide Copilot's behavior to align with your project's coding standards and conventions. This is particularly useful for large teams or complex projects where consistency is key.
+Model Context Protocol (MCP) servers allow you to extend GitHub Copilot capabilities to external data sources. Custom instructions can help guide Copilot's behavior to align with your project's coding standards and conventions. This is particularly useful for large teams or complex projects where consistency is key.
 
 ### Set Up Project-Specific Custom Instructions
 
