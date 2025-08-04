@@ -13,8 +13,6 @@ By the end of this demo, you will:
 
 **Estimated Time:** 15-20 minutes
 
-# Features: Learn about the project
-
 ## 🎯 Step 1: Discover Available Features
 
 Mode: Ask

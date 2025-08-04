@@ -10,7 +10,6 @@ By the end of this demo, you will:
 - [ ] Understand collaboration features on GitHub.com
 
 **Estimated Time:** 10-15 minutes
-**Prerequisites:** Completed [Features Demo](./features-demo.md)
 
 ## 🔧 IDE Features for Engineering Teams
 
@@ -122,4 +121,4 @@ GitHub.com provides additional tools for managing Copilot at the organizational 
 
 Congratulations! Second demo has been complete.
 
-👉 **[Start Switching Models Demo ](./switching-models.md)**
+👉 **[Start Customize Copilot Demo ](./customize-copilot.md)**
