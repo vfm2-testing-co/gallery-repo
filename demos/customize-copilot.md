@@ -121,6 +121,16 @@ Look through response. What other modes would be helpful for this repo?
 
 ## 🛠️ Step 5: Custom Instructions with MCP Servers
 
+### Understanding MCP Servers
+
+Model Context Protocol (MCP) servers allow you to extend GitHub Copilot capabilities. Custom instructions can help guide Copilot's behavior to align with your project's coding standards and conventions. This is particularly useful for large teams or complex projects where consistency is key.
+
+### Demo: Set Up Project-Specific Custom Instructions
+
+
+### MCP Demo
+
+
 ## ✅ Completion Checklist
 
 Mark off each item as you complete it:
