@@ -7,7 +7,7 @@ By the end of this demo, you will:
 - [ ] Know how to monitor your premium request usage
 - [ ] Switch between AI models in Chat and Code completions (OPTIONAL)
 - [ ] Use prompt files for consistent AI interactions
-- [ ] Utilize different Chat modes for various development tasks
+- [ ] Utilize Chat modes for various development tasks
 - [ ] Set up custom instructions with MCP servers for personalized AI behavior
 
 **Estimated Time:** 25-30 minutes
@@ -66,7 +66,7 @@ Which answers did you like the best? which the least? Discuss in your group.
 ## 📝 Step 3: Use Prompt Files
 
 1. Go to the prompts folder and look through the files. 
-  - There are three files to choose from each in varying difficult levels. 
+  - There are two files to choose from each in varying difficult levels. 
   - Look over the format of each before choosing which one.
 2. Choose the file you want to test out
 3. Add in the prompt below depending on the prompt file.
@@ -77,19 +77,47 @@ Prompt
 /generate-mock-photo-data 3
 ```
 
-**Generate new UI component**
+**Refactor UI component**
 Prompt
 ```
 /generate-new-ui for the recent galleries table in the admin page. I want it to be the replacement component for the current table and be reuseable.  Place it in the layout folder.
 ```
 
-**Generate new gallery feature**
-Prompt
-```
-/new-gallery-features add in the functionality for the "download" button in the gallery page. All components should be in the "components/gallery" folder
+**BONAS CHALLENGE:** Create your own prompt file for unit tests
+
+Ask copilot to generate a new prompt file for unit tests. Use the following steps:
+
+1. Go to GitHub Copilot UI
+2. Click on the gear icon in the top right corner
+3. Select "Prompt Files"
+4. Click the plus icon that says "New prompt file"
+5. Select the folder you want to save the file in i.e `.github/prompts/`
+6. Name the file 'generate-unit-tests.prompt.md'
+7. Create your own custom prompt file with GitHub Copilot:
+
+```markdown
+<!-- Add in related files to Ask mode-->
+Related files:
+- /src/components/ui/FeatureCard.tsx
+- /.github/prompts/generate-new-ui.prompt.md
+- /.github/prompts/generate-mock-photo-data.prompt.md
+
+<!-- Copy/paste prompt below -->
+help me create a prompt files for creating unit test generation for the UI components. 
 ```
 
-## 🎭 Step 4: Utilize Different Chat Modes
+## 🎭 Step 4: Utilize Chat Modes
+
+1. Look over the `Plan.chatmode.md` in the `.github/chatmodes` file to see the expected behavior of the mode
+2. Go to GitHub Copilot Chat
+3. Update mode to "Plan" mode
+4. Add in prompt below and look over the suggestion
+
+```markdown
+help me plan out a new page for creating new galleries
+```
+**DISCUSSION**
+Look through response. What other modes would be helpful for this repo?
 
 ## 🛠️ Step 5: Custom Instructions with MCP Servers
 
