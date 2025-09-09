@@ -1,0 +1,14 @@
+name: simple workflow
+
+on:
+    push:
+        branches: ['main']
+
+jobs:
+    install:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Install dependencies
+              run: npm install
+               
